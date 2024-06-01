@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: 'https://main--thesocialnetworkapp.netlify.app', // frontend URL
+    origin: 'https://main--thesocialnetworkapp.netlify.app/', // frontend URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204
