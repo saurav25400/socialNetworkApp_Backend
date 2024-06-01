@@ -60,8 +60,10 @@ router.post("/signin", async (req, res, next) => {
         "MubrGreNhDggODBu2YasC03mRpM8N7NP",{ expiresIn: '1d' }
       );
       console.log(token,'signin');
-      res.cookie("token", token, { httpOnly: true, maxAge: 24 * 60 * 60*1000,secure: process.env.NODE_ENV === 'production', // Set secure to true in production
-      sameSite: 'strict', });
+      res.cookie("token", token, { httpOnly: true, maxAge: 24 * 60 * 60*1000,
+     secure: true, // Ensure the cookie is only sent over HTTPS
+     sameSite: 'None', // Allow cross-origin requests
+      });
       return res
         .status(200).json({
           success: true,
